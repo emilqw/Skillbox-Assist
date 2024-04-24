@@ -28,15 +28,15 @@ var HTMLManager = /*#__PURE__*/function () {
   function HTMLManager() {
     _classCallCheck(this, HTMLManager);
   }
-
-  /**
-   * Функция добавляет родителю дочерний элемент, если родителя еще не существует, он ждет его создания, используя MutationObserver
-   * @param parentClass {string} Класс родительского элемента
-   * @param childElement {HTMLElement} Дочерний элемент
-   */
   return _createClass(HTMLManager, null, [{
     key: "appendChild",
-    value: function appendChild(parentClass, childElement) {
+    value:
+    /**
+     * Функция добавляет родителю дочерний элемент, если родителя еще не существует, он ждет его создания, используя MutationObserver
+     * @param parentClass {string} Класс родительского элемента
+     * @param childElement {HTMLElement} Дочерний элемент
+     */
+    function appendChild(parentClass, childElement) {
       console.log("Функция appendChild");
       var parentElement = document.getElementsByClassName(parentClass)[0];
       if (parentElement) {
@@ -277,6 +277,9 @@ var button = new _components_SabiButton__WEBPACK_IMPORTED_MODULE_0__.SabiButton(
 });
 button.element.classList.add("fr-command", "fr-btn");
 _components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild("fr-btn-grp", button.element);
+window.addEventListener('resize', function () {
+  return _components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild("fr-btn-grp", button.element);
+});
 })();
 
 /******/ })()
