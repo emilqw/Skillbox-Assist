@@ -8889,8 +8889,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
+  var onClick = function onClick() {
+    alert("Hello World!");
+  };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "\u041F\u0440\u0438\u0432\u0435\u0442 \u043C\u0438\u0440", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    variant: "text"
+    variant: "text",
+    onClick: onClick
   }, "Text"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "contained"
   }, "Contained"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_1__["default"], {
