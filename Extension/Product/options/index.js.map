@@ -1,1 +1,1 @@
-{"version":3,"file":"options/index.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAAC,gBAAgB,CAAC,C","sources":["webpack:///./Dev/options/optionsScript.js"],"sourcesContent":["console.log(\"Options Script\");"],"names":["console","log"],"sourceRoot":""}
+{"version":3,"file":"options/index.js","mappings":";;;;;AAEAA,OAAO,CAACC,GAAG,CAAC,cAAc,CAAC,C","sources":["webpack:///./Dev/options/optionsScript.js"],"sourcesContent":["\r\n\r\nconsole.log(\"Hello World!\");"],"names":["console","log"],"sourceRoot":""}
