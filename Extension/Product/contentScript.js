@@ -277,9 +277,6 @@ var button = new _components_SabiButton__WEBPACK_IMPORTED_MODULE_0__.SabiButton(
 });
 button.element.classList.add("fr-command", "fr-btn");
 _components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild("fr-btn-grp", button.element);
-window.addEventListener('resize', function () {
-  return _components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild("fr-btn-grp", button.element);
-});
 })();
 
 /******/ })()
