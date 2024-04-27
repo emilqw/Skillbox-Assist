@@ -277,6 +277,9 @@ var button = new _components_SabiButton__WEBPACK_IMPORTED_MODULE_0__.SabiButton(
 });
 button.element.classList.add("fr-command", "fr-btn");
 _components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild("fr-btn-grp", button.element);
+var p = document.createElement("p");
+p.textContent = "Привет, как дела?";
+_components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild("wysiwyg-editor", p);
 })();
 
 /******/ })()
