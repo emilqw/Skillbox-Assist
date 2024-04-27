@@ -24,7 +24,7 @@ module.exports = {
             // Выбор пути в зависимости от имени входной точки
             switch (pathData.chunk.name) {
                 case 'reactApp':
-                    return 'react/index.js';
+                    return 'panel/index.js';
                 case 'popupScript':
                     return 'popup/index.js';
                 case 'optionsScript':
@@ -34,7 +34,7 @@ module.exports = {
                 case 'contentScript':
                     return 'contentScript.js';
                 case 'panelScript':
-                    return 'panel/index.js';
+                    return 'react/index.js';
                 default:
                     return '[name].js';
             }
