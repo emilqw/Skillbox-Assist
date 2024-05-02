@@ -21,9 +21,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-/**
- * Менеджер для работы с HTML
- */
 var HTMLManager = /*#__PURE__*/function () {
   function HTMLManager() {
     _classCallCheck(this, HTMLManager);
@@ -33,13 +30,14 @@ var HTMLManager = /*#__PURE__*/function () {
     value:
     /**
      * Функция добавляет родителю дочерний элемент, если родителя еще не существует, он ждет его создания, используя MutationObserver
-     * @param parentClass {string} Класс родительского элемента
+     * @param parentSelector {string} CSS-селектор родительского элемента
      * @param childElement {HTMLElement} Дочерний элемент
      */
-    function appendChild(parentClass, childElement) {
+    function appendChild(parentSelector, childElement) {
       console.log("Функция appendChild");
-      var parentElement = document.getElementsByClassName(parentClass)[0];
+      var parentElement = document.querySelector(parentSelector);
       if (parentElement) {
+        console.log("Element: ", parentElement);
         parentElement.appendChild(childElement);
       } else {
         var observer = new MutationObserver(function (mutations) {
@@ -55,7 +53,8 @@ var HTMLManager = /*#__PURE__*/function () {
                 try {
                   for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
                     var node = _step2.value;
-                    if (node.nodeType === Node.ELEMENT_NODE && node.classList.contains(parentClass)) {
+                    if (node.nodeType === Node.ELEMENT_NODE && node.matches(parentSelector)) {
+                      console.log("Element: ", node);
                       node.appendChild(childElement);
                       observer.disconnect();
                       return;
@@ -276,10 +275,10 @@ var button = new _components_SabiButton__WEBPACK_IMPORTED_MODULE_0__.SabiButton(
   console.log("Нажата кнопка- Привет-Пока");
 });
 button.element.classList.add("fr-command", "fr-btn");
-_components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild("fr-btn-grp", button.element);
+_components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild('.fr-btn-grp', button.element);
 var p = document.createElement("p");
 p.textContent = "Привет, как дела?";
-_components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild("wysiwyg-editor", p);
+_components_HTMLManager__WEBPACK_IMPORTED_MODULE_1__.HTMLManager.appendChild('div[data-e2e="wysiwyg-editor"] .fr-element.fr-view.custom-theme p', p);
 })();
 
 /******/ })()
